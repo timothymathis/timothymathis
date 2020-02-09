@@ -1,21 +1,72 @@
+@mixin breakpoint($size) {
+  $breakpoints: (
+    small: 600px,
+  );
+
+  @media screen and (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
 body {
-    font-family: Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+}
+
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: auto;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    margin-top: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  font-size: 0.8rem;
+  margin-block-end: 1rem;
+}
+
+.hero-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include breakpoint(small) {
+    flex-direction: row;
+  }
+
+  &__letter {
+    text-align: center;
+  }
+}
+
+.tagline {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include breakpoint(small) {
+    flex-direction: row;
+  }
+
+  &__word {
+    text-align: center;
+
+    @include breakpoint(small) {
+      & + .tagline__word {
+        margin-inline-start: 1rem;
+      }
+    }
+  }
 }
