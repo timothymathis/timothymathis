@@ -57,7 +57,7 @@ footer {
   justify-content: center;
   flex-direction: column;
   margin: 0;
-  font-family: "Dokdo", cursive;
+  font-family: "Dokdo", sans-serif;
   font-size: 10rem;
   line-height: 9rem;
 
@@ -70,7 +70,7 @@ footer {
     background-image: -webkit-linear-gradient(transparent, transparent),
       url("../images/stripes.jpg");
     -webkit-text-fill-color: transparent;
-    background-clip: transparent;
+    background-clip: text;
     -webkit-background-clip: text;
     background-size: 222%;
   }
