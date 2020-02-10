@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+English+SC&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dokdo&display=swap");
+
 @mixin breakpoint($size) {
   $breakpoints: (
     small: 600px,
@@ -8,9 +11,21 @@
   }
 }
 
+$font-color-primary: #ffffff;
+
 body {
-  font-family: Helvetica, sans-serif;
   margin: 0;
+  font-family: Helvetica, sans-serif;
+  color: $font-color-primary;
+  background-color: #006e87;
+}
+
+a {
+  color: $font-color-primary;
+
+  &:hover {
+    color: darken($font-color-primary, 20%);
+  }
 }
 
 #gatsby-focus-wrapper {
@@ -33,7 +48,7 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: auto;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   margin-block-end: 1rem;
 }
 
@@ -41,6 +56,10 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin: 0;
+  font-family: "Dokdo", cursive;
+  font-size: 10rem;
+  line-height: 9rem;
 
   @include breakpoint(small) {
     flex-direction: row;
@@ -48,6 +67,12 @@ footer {
 
   &__letter {
     text-align: center;
+    background-image: -webkit-linear-gradient(transparent, transparent),
+      url("../images/stripes.jpg");
+    -webkit-text-fill-color: transparent;
+    background-clip: transparent;
+    -webkit-background-clip: text;
+    background-size: 222%;
   }
 }
 
@@ -55,6 +80,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: "IM Fell English SC", serif;
 
   @include breakpoint(small) {
     flex-direction: row;
@@ -67,6 +93,18 @@ footer {
       & + .tagline__word {
         margin-inline-start: 1rem;
       }
+    }
+  }
+}
+
+.links {
+  margin-block-end: 1rem;
+
+  &__logo {
+    width: 32px;
+
+    &--linkedin {
+        margin-inline-start: 5px;
     }
   }
 }
